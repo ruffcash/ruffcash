@@ -94,7 +94,7 @@
 
   // demo roster, only used while mode === 'demo'
   // live-only roster — factory kennels arrive via /api/yard
-  if (false) window.SEED_HOUNDS.forEach(s => hounds.push(spawnHound(s)));
+  window.SEED_HOUNDS.forEach(s => hounds.push(spawnHound(s)));
 
   // pack neighbour lines — recomputed whenever the roster changes shape
   let links = [];
