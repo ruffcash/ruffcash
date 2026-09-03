@@ -3,10 +3,10 @@ pragma solidity ^0.8.24;
 
 /// @title Stickpot
 /// @notice Fill a bowl. First fold takes the stick.
-/// @dev RuffCash ($RUFF) pre-contract for Robinhood 4663.
+/// @dev RuffCash (RUFF) pre-contract for Robinhood 4663.
 ///      LetsCash already takes 0.3% on token trades (not here).
 ///      This pot takes 0.7% protocol + 4% talker share from each bowl fill.
-///      Site https://ruffcash.xyz  X @ruffcashXYZ  TG @ruffcashXYZ
+///      Site ruffcash.xyz  X ruffcashXYZ  TG ruffcashXYZ
 
 contract Bowl {
     address public immutable owner;
