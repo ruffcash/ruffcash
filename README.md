@@ -11,5 +11,6 @@ Fill the bowl. First fold takes the stick.
 | X | [@ruffcashXYZ](https://x.com/ruffcashXYZ) |
 | Telegram | [@ruffcashXYZ](https://t.me/ruffcashXYZ) |
 
-Vercel: import **woofcash/ruffcash** as static (no build command). Domain ruffcash.xyz.
-Transfer this repo to github.com/ruffcash when that account is connected.
+You fill a bowl (doghouse) with ETH. The ruff walks. A stick decays 25% a turn. First fold takes it.
+
+Vercel: import this repo as a static site (no `npm run build`). Root directory empty. Domain `ruffcash.xyz`.

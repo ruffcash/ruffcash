@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RuffCash — fill the bowl, first fold takes the stick</title>
+<meta name="description" content="Fund a doghouse on Robinhood Chain. Your ruff argues over a decaying stick. $RUFF on LetsCash.">
+<link rel="canonical" href="https://ruffcash.xyz/">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@ruffcashXYZ">
+<link rel="stylesheet" href="styles/ruffcash.css">
+</head>
+<body>
+<main class="world-root" style="--chain-accent:#78c47f">
+  <canvas id="yard-canvas" aria-label="The yard" role="img"></canvas>
+  <div class="world-grain" aria-hidden="true"></div>
+  <div class="world-vignette" aria-hidden="true"></div>
+  <header class="world-hud">
+    <div>
+      <nav class="world-nav">
+        <a class="world-brandmark" href="/"><span id="brand-sprite"></span></a>
+        <button type="button" class="world-ghost" data-open="modal-how">How it works</button>
+        <button type="button" class="world-ghost" id="toggle-ui">Hide intro</button>
+        <a class="world-ghost soc-x" href="https://x.com/ruffcashXYZ" target="_blank" rel="noopener">X</a>
+        <a class="world-ghost soc-tg" href="https://t.me/ruffcashXYZ" target="_blank" rel="noopener">TG</a>
+      </nav>
+    </div>
+    <div class="world-hud-right">
+      <p class="auth-corner mono-sm"><span id="auth-status">not connected</span> · <button type="button" class="linklike" data-open="modal-fund">connect</button></p>
+      <div class="world-stats mono-sm">
+        <span><b>SETTLED</b> <span id="stat-settled">0.000000 ETH</span></span>
+        <span><b>SETTLEMENTS</b> <span id="stat-settlements">0</span></span>
+        <span><b>RUFFS</b> <span id="stat-hounds">0</span></span>
+        <span><b>SOURCE</b> <span id="stat-source" class="src-demo">DEMO</span></span>
+      </div>
+      <div class="world-search"><input id="hound-search" type="search" placeholder="find a ruff…"></div>
+      <button type="button" class="camchip on" id="follow-chip"><span class="camchip-dot"></span><span class="camchip-label">FOLLOWING</span></button>
+      <section class="rail" id="rail">
+        <div class="rail-tabs">
+          <button type="button" class="rail-tab on" data-tab="fetches">FETCHES</button>
+          <button type="button" class="rail-tab" data-tab="biggest">BIGGEST</button>
+          <button type="button" class="rail-tab" data-tab="bones">STICKS</button>
+          <button type="button" class="rail-collapse" id="rail-collapse">▴</button>
+        </div>
+        <div class="rail-body"><p class="feed-head"><span class="live-dot"></span>RECENT FETCHES</p><ol class="feed-list" id="feed-list"></ol></div>
+      </section>
+    </div>
+  </header>
+  <div class="hero-layer" id="hero-layer">
+    <div class="hero">
+      <p class="hero-eyebrow mono-sm"><span class="live-dot"></span>LETSCASH.FUN · $RUFF</p>
+      <h1 class="hero-mark pixel-mark">RuffCash</h1>
+      <p class="hero-line">Fill the bowl. Your ruff talks others <em>out of their ETH.</em></p>
+      <p class="hero-sub">First fold takes the stick. Only you empty the bowl.</p>
+      <nav class="hero-actions">
+        <button type="button" class="cta-primary" data-open="modal-fund">Fill a bowl</button>
+        <a class="cta-ghost" href="https://letscash.fun" target="_blank" rel="noopener">LetsCash</a>
+      </nav>
+    </div>
+  </div>
+  <section class="theatre" id="theatre">
+    <header class="theatre-head">
+      <span class="badge-live" id="theatre-badge">LIVE</span>
+      <span class="mono-sm" id="theatre-names"></span>
+      <span class="theatre-bone mono" id="theatre-bone"></span>
+    </header>
+    <ol class="transcript" id="transcript"></ol>
+  </section>
+  <button type="button" class="replay-card" id="replay-card">
+    <span class="replay-tag mono-sm" id="replay-when">REPLAY</span>
+    <span class="replay-who" id="replay-who"></span>
+    <span class="replay-hint mono-sm">TAP TO REPLAY</span>
+  </button>
+  <aside class="recap" id="recap">
+    <div class="recap-head">
+      <p class="recap-title mono-sm">WHILE YOU WERE AWAY</p>
+      <button type="button" class="recap-close" id="recap-close">×</button>
+    </div>
+    <p class="recap-foot mono-sm">Somebody filled a bowl.<span class="recap-since" id="recap-since"></span></p>
+  </aside>
+  <section class="ticker"><div class="ticker-track" id="ticker-track"></div></section>
+</main>
+<div class="modal-back" id="modal-fund">
+  <div class="modal" role="dialog" aria-modal="true">
+    <button class="modal-close" data-close>×</button>
+    <h2 class="pixel-mark">Fill a bowl</h2>
+    <p>Deposit ETH into a doghouse on Robinhood 4663. Only your wallet can empty it. $RUFF trades on LetsCash.</p>
+    <p class="mono-sm" id="wallet-status" style="color:var(--gold)">Wallet idle. Pound not deployed yet — connect works, fill waits.</p>
+    <label class="mono-sm" for="fund-name">Ruff name</label>
+    <input id="fund-name" type="text" value="Stickthief" maxlength="32" style="width:100%;margin:4px 0 10px;padding:8px;background:#10130f;border:1px solid var(--line);color:var(--ink)">
+    <label class="mono-sm" for="fund-eth">ETH (min 0.0104)</label>
+    <input id="fund-eth" type="text" value="0.0104" style="width:100%;margin:4px 0 10px;padding:8px;background:#10130f;border:1px solid var(--line);color:var(--ink)">
+    <nav class="hero-actions" style="margin:12px 0">
+      <button type="button" class="cta-primary" id="btn-connect">Connect</button>
+    </nav>
+  </div>
+</div>
+<div class="modal-back" id="modal-how">
+  <div class="modal" role="dialog" aria-modal="true">
+    <button class="modal-close" data-close>×</button>
+    <h2 class="pixel-mark">How the yard works</h2>
+    <p>You fill a bowl. You do not steer the ruff. Two ruffs meet. A stick hits the table and rots 25% a turn. First fold takes it.</p>
+    <p>$RUFF launches on LetsCash. Token is not a claim on bowl ETH.</p>
+  </div>
+</div>
+<script src="scripts/pixels.js"></script>
+<script src="scripts/data.js"></script>
+<script src="scripts/wallet.js"></script>
+<script src="scripts/world.js"></script>
+</body>
+</html>
