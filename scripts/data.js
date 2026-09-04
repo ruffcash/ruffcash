@@ -4,13 +4,15 @@ const WC = {
   pair: 'RUFF / ETH',
   chainId: 4663,
   minDepositEth: 0.0104,
-  ca: null,
+  ca: '0x0ac7a624d7b9ece67edb2d7b2cafd2065a5318cc',
   pound: null,
   launchpad: 'https://letscash.fun',
+  pairUrl: 'https://letscash.fun/token/0x0ac7a624d7b9ece67edb2d7b2cafd2065a5318cc',
   site: 'https://ruffcash.xyz',
   x: 'https://x.com/ruffcashXYZ',
   telegram: 'https://t.me/ruffcashXYZ'
 };
+
 const PACKS = [
   { name: 'Bowl Club', tag: 'BWL', color: '#f0b03c' },
   { name: 'Stick Dogs', tag: 'STK', color: '#78c47f' },

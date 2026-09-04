@@ -558,7 +558,7 @@
       short(r.kA) + ' ↔ ' + short(r.kB) + '<i> ' + ago(r.ts) + '</i></span>'
     ).join('');
     track.innerHTML = html ? html + html
-      : '<span class="tick"><b>YARD OPEN</b> waiting for the first settlement on Robinhood Chain 4663</span>';
+      : '<span class="tick"><b>YARD OPEN</b> $RUFF live · CA ' + ((window.WC && window.WC.ca) || '') + ' · Robinhood 4663</span>';
   }
 
   function renderRecap() {
@@ -657,6 +657,40 @@
     brand.appendChild(img);
   }
   window.wcSetFavicon();
+
+  (function bindCaCopy() {
+    const ca = window.WC && window.WC.ca;
+    if (!ca) return;
+    const shortCa = ca.slice(0, 6) + '…' + ca.slice(-4);
+    document.querySelectorAll('[data-copy-ca]').forEach(btn => {
+      btn.querySelectorAll('[data-ca-label]').forEach(n => { n.textContent = shortCa; });
+      btn.addEventListener('click', async (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        try {
+          await navigator.clipboard.writeText(ca);
+        } catch (_) {
+          const ta = document.createElement('textarea');
+          ta.value = ca;
+          ta.setAttribute('readonly', '');
+          ta.style.position = 'fixed';
+          ta.style.left = '-9999px';
+          document.body.appendChild(ta);
+          ta.select();
+          try { document.execCommand('copy'); } catch (err) {}
+          ta.remove();
+        }
+        btn.classList.add('copied');
+        btn.querySelectorAll('[data-ca-hint]').forEach(n => { n.textContent = 'copied'; });
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.querySelectorAll('[data-ca-hint]').forEach(n => { n.textContent = 'copy'; });
+        }, 1400);
+      });
+    });
+    const buy = el('buy-ruff');
+    if (buy && window.WC.pairUrl) buy.href = window.WC.pairUrl;
+  })();
 
   resize();
   renderStats();

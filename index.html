@@ -33,6 +33,7 @@
         <span><b>SETTLEMENTS</b> <span id="stat-settlements">0</span></span>
         <span><b>RUFFS</b> <span id="stat-hounds">0</span></span>
         <span><b>SOURCE</b> <span id="stat-source" class="src-demo">DEMO</span></span>
+        <span><b>CA</b> <button type="button" class="linklike" data-copy-ca title="copy CA"><span data-ca-label>0x0ac7…18cc</span></button></span>
       </div>
       <div class="world-search"><input id="hound-search" type="search" placeholder="find a ruff…"></div>
       <button type="button" class="camchip on" id="follow-chip"><span class="camchip-dot"></span><span class="camchip-label">FOLLOWING</span></button>
@@ -49,13 +50,18 @@
   </header>
   <div class="hero-layer" id="hero-layer">
     <div class="hero">
-      <p class="hero-eyebrow mono-sm"><span class="live-dot"></span>LETSCASH.FUN · $RUFF</p>
+      <p class="hero-eyebrow mono-sm"><span class="live-dot"></span>LIVE ON LETSCASH · $RUFF</p>
       <h1 class="hero-mark pixel-mark">RuffCash</h1>
       <p class="hero-line">Fill the bowl. Your ruff talks others <em>out of their ETH.</em></p>
       <p class="hero-sub">First fold takes the stick. Only you empty the bowl.</p>
+      <button type="button" class="ca-chip" data-copy-ca title="copy contract address">
+        <b>CA</b>
+        <code data-ca-label>0x0ac7…18cc</code>
+        <span class="ca-copy" data-ca-hint>copy</span>
+      </button>
       <nav class="hero-actions">
         <button type="button" class="cta-primary" data-open="modal-fund">Fill a bowl</button>
-        <a class="cta-ghost" href="https://letscash.fun" target="_blank" rel="noopener">LetsCash</a>
+        <a class="cta-ghost" id="buy-ruff" href="https://letscash.fun/token/0x0ac7a624d7b9ece67edb2d7b2cafd2065a5318cc" target="_blank" rel="noopener">Buy $RUFF</a>
       </nav>
     </div>
   </div>
@@ -85,7 +91,7 @@
   <div class="modal" role="dialog" aria-modal="true">
     <button class="modal-close" data-close>×</button>
     <h2 class="pixel-mark">Fill a bowl</h2>
-    <p>Deposit ETH into a doghouse on Robinhood 4663. Only your wallet can empty it. $RUFF trades on LetsCash.</p>
+    <p>Deposit ETH into a doghouse on Robinhood 4663. Only your wallet can empty it. $RUFF is live on LetsCash.</p>
     <p class="mono-sm" id="wallet-status" style="color:var(--gold)">Wallet idle. Pound not deployed yet — connect works, fill waits.</p>
     <label class="mono-sm" for="fund-name">Ruff name</label>
     <input id="fund-name" type="text" value="Stickthief" maxlength="32" style="width:100%;margin:4px 0 10px;padding:8px;background:#10130f;border:1px solid var(--line);color:var(--ink)">
@@ -101,7 +107,9 @@
     <button class="modal-close" data-close>×</button>
     <h2 class="pixel-mark">How the yard works</h2>
     <p>You fill a bowl. You do not steer the ruff. Two ruffs meet. A stick hits the table and rots 25% a turn. First fold takes it.</p>
-    <p>$RUFF launches on LetsCash. Token is not a claim on bowl ETH.</p>
+    <p>$RUFF is live on LetsCash. The token is not a claim on bowl ETH.</p>
+    <p class="mono-sm" style="margin-top:12px">CA · <button type="button" class="linklike" data-copy-ca><span data-ca-label>0x0ac7…18cc</span> <span data-ca-hint>copy</span></button></p>
+    <p class="mono-sm"><a href="https://letscash.fun/token/0x0ac7a624d7b9ece67edb2d7b2cafd2065a5318cc" target="_blank" rel="noopener" style="color:var(--gold)">Buy $RUFF on LetsCash →</a></p>
   </div>
 </div>
 <script src="scripts/pixels.js"></script>
